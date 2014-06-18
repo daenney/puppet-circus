@@ -1,5 +1,5 @@
 # circus
-
+[![Build Status](https://travis-ci.org/daenney/puppet-circus.svg?branch=master)](https://travis-ci.org/daenney/puppet-circus)
 #### Table of Contents
 
 1. [Overview](#overview)
