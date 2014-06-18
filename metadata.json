@@ -1,0 +1,82 @@
+{
+  "name": "daenney-circus",
+  "version": "0.1.0",
+  "author": "Daniele Sluijters",
+  "summary": "Circus process and socket manager",
+  "license": "Apache 2.0",
+  "source": "https://github.com/daenney/puppet-circus",
+  "project_page": "https://github.com/daenney/puppet-circus",
+  "issues_url": "https://github.com/daenney/puppet-circus/issues",
+  "dependencies": [
+  {
+    "name": "puppetlabs-stdlib",
+    "version_range": ">= 4.2.0"
+  },
+  {
+    "name": "puppetlabs-inifile",
+    "version_range": ">= 1.1.0",
+  }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.2.0 < 3.4.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "11 SP1"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ]
+}
