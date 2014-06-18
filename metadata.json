@@ -14,7 +14,7 @@
   },
   {
     "name": "puppetlabs-inifile",
-    "version_range": ">= 1.1.0",
+    "version_range": ">= 1.1.0"
   }
   ],
   "requirements": [
