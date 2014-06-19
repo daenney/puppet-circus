@@ -15,7 +15,7 @@ describe 'circus::install' do
     it { should contain_package('circus').with({
       :ensure   => 'installed',
       :provider => 'pip',
-      :notify   => ['Class[Circus::Install]', 'Class[Circus::Services]']
+      :notify   => ['Class[Circus::Configure]', 'Class[Circus::Services]']
     })}
   end
 
@@ -33,12 +33,12 @@ describe 'circus::install' do
     it { should contain_package('circus').with({
       :ensure   => 'installed',
       :provider => 'pip',
-      :notify   => ['Class[Circus::Install]', 'Class[Circus::Services]']
+      :notify   => ['Class[Circus::Configure]', 'Class[Circus::Services]']
     })}
     it { should contain_package('python-dev').with({
       :ensure   => 'installed',
       :before   => 'Package[circus]',
-      :notify   => ['Class[Circus::Install]', 'Class[Circus::Services]']
+      :notify   => 'Class[Circus::Services]'
     })}
   end
 end
