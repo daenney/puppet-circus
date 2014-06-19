@@ -13,4 +13,12 @@ class circus::install {
     }
   }
 
+  if $::circus::package_circus_provider == 'pip' {
+    file { '/usr/bin/circusd':
+      ensure  => 'link',
+      target  => '/usr/local/bin/circusd',
+      require => Package[$::circus::package_circus],
+    }
+  }
+
 }
