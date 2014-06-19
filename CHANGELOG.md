@@ -1,3 +1,8 @@
+## 2014-06-19 0.1.4
+### Bugfixes
+* Only symlink circusd when installed from pip. Without adding the symlink
+  the init-scripts won't be able to start the daemon.
+
 ## 2014-06-19 0.1.3
 ### Bugfixes
 * Forgot to add `modules/` to the source attribute of file resources.

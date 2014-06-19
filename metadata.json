@@ -1,6 +1,6 @@
 {
   "name": "daenney-circus",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Daniele Sluijters",
   "summary": "Circus process and socket manager",
   "license": "Apache 2.0",
