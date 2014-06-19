@@ -38,9 +38,9 @@ startup scripts should be raised with [Mozilla][circus].
 
 * Install circus from PyPi;
 * Create `/etc/circus`, `/etc/circus/conf.d`;
-* Create `/etc/circus/circusd.ini`
-* Symlink `/usr/local/bin/circusctl` and `/usr/local/bin/circusd` into
-  `/usr/bin`.
+* Create `/etc/circus/circusd.ini`;
+* Symlink `/usr/local/bin/circusd` into `/usr/bin` (only done if installed
+  from pip to ensure the init-scripts can start the daemon).
 
 ### Setup requirements
 
@@ -52,6 +52,29 @@ To install circus:
 
 ```puppet
 include ::circus
+```
+
+In order to install Circus you'll need the Python development headers
+installed on your system and a few other things. If they aren't managed
+anywhere yet this module can do that for you.
+
+```puppet
+class { 'circus':
+  package_circus_dependencies => ['python-dev', 'build-essential'],
+}
+```
+
+You can also use Hiera with databindings to do the same thing.
+
+```puppet
+include ::circus
+```
+
+```yaml
+---
+circus::package_circus_dependencies:
+  - 'python-dev'
+  - 'build-essential'
 ```
 
 ## Usage
