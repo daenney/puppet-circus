@@ -48,7 +48,7 @@ describe 'circus::configure' do
   it 'installs the init script' do
     should contain_file('/etc/init.d/circus').with({
       :ensure => 'file',
-      :source => 'puppet:///circus/circus.init',
+      :source => 'puppet:///modules/circus/circus.init',
       :owner  => '0',
       :group  => '0',
       :mode   => '0755',
@@ -59,7 +59,7 @@ describe 'circus::configure' do
   it 'configures logrotate' do
     should contain_file('/etc/logrotate.d/circus').with({
       :ensure => 'file',
-      :source => 'puppet:///circus/circus.logrotate',
+      :source => 'puppet:///modules/circus/circus.logrotate',
       :owner  => '0',
       :group  => '0',
       :mode   => '0644'
@@ -110,7 +110,7 @@ describe 'circus::configure' do
     it 'installs the init script' do
       should contain_file('/etc/init/circus.conf').with({
         :ensure => 'file',
-        :source => 'puppet:///circus/circus.upstart',
+        :source => 'puppet:///modules/circus/circus.upstart',
         :owner  => '0',
         :group  => '0',
         :mode   => '0644',
@@ -132,7 +132,7 @@ describe 'circus::configure' do
     it 'installs the init script' do
       should contain_file('/lib/systemd/system/circus.service').with({
         :ensure => 'file',
-        :source => 'puppet:///circus/circus.service',
+        :source => 'puppet:///modules/circus/circus.service',
         :owner  => '0',
         :group  => '0',
         :mode   => '0644',

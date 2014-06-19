@@ -51,7 +51,7 @@ class circus::configure {
 
   file { $dest_path:
     ensure => 'file',
-    source => "puppet:///${module_name}/circus.${extension}",
+    source => "puppet:///modules/${module_name}/circus.${extension}",
     owner  => '0',
     group  => '0',
     mode   => $dest_mode,
@@ -60,7 +60,7 @@ class circus::configure {
 
   file { "${::circus::logrotate_dir}/circus":
     ensure => 'file',
-    source => "puppet:///${module_name}/circus.logrotate",
+    source => "puppet:///modules/${module_name}/circus.logrotate",
     owner  => '0',
     group  => '0',
     mode   => '0644',
