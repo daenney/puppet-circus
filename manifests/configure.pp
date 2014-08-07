@@ -71,6 +71,7 @@ class circus::configure {
   ::circus::setting { 'pubsub_endpoint': value => 'tcp://127.0.0.1:5556', }
   ::circus::setting { 'stats_endpoint' : value => 'tcp://127.0.0.1:5557', }
   ::circus::setting { 'include_dir'    : value => '/etc/circus/conf.d', }
+  ::circus::setting { 'logoutput'      : value => "${::circus::log_prefix}/circus/circusd.log", }
 
   ::circus::setting { 'use':
     value   => 'circus.plugins.flapping.Flapping',
