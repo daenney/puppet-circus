@@ -1,3 +1,7 @@
+## 2014-08-07 0.1.5
+### Features
+* Log daemon activity to /var/log/circus/circusd.log.
+
 ## 2014-06-19 0.1.4
 ### Bugfixes
 * Only symlink circusd when installed from pip. Without adding the symlink
