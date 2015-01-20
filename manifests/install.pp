@@ -18,6 +18,7 @@ class circus::install {
       ensure  => 'link',
       target  => '/usr/local/bin/circusd',
       require => Package[$::circus::package_circus],
+      replace => false,
     }
   }
 
