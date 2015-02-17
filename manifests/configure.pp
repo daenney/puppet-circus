@@ -32,7 +32,10 @@ class circus::configure {
     'sysv': {
       $dest_path = '/etc/init.d/circus'
       $dest_mode = '0755'
-      $extension = 'init'
+      $extension = $::osfamily ? {
+        'RedHat' => $::osfamily,
+        default  => 'init'
+      }
     }
     'upstart': {
       $dest_path = '/etc/init/circus.conf'

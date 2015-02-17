@@ -11,6 +11,8 @@ describe 'circus::configure' do
     "include circus" ]
   end
 
+  let (:facts) {{:osfamily => ''}}
+
   it 'creates the required directories' do
     should contain_file('/etc/circus').with({
       :ensure => 'directory',
@@ -34,7 +36,6 @@ describe 'circus::configure' do
     })
   end
 
-
   it 'ensures circusd.ini exists' do
     should contain_file('/etc/circus/circusd.ini').with({
       :ensure => 'file',
@@ -44,6 +45,19 @@ describe 'circus::configure' do
     })
   end
 
+  context 'on RedHat system' do
+    let (:facts) {{:osfamily => 'RedHat'}}
+    it 'installs the RedHat init script' do
+      should contain_file('/etc/init.d/circus').with({
+        :ensure => 'file',
+        :source => 'puppet:///modules/circus/circus.RedHat',
+        :owner  => '0',
+        :group  => '0',
+        :mode   => '0755',
+        :notify => 'Class[Circus::Services]'
+      })
+    end
+  end
 
   it 'installs the init script' do
     should contain_file('/etc/init.d/circus').with({
