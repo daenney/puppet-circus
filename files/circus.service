@@ -4,6 +4,7 @@ After=syslog.target network.target
 
 [Service]
 Type=simple
+EnvironmentFile=-/etc/sysconfig/circus
 ExecStart=/usr/bin/circusd /etc/circus/circusd.ini
 
 [Install]
